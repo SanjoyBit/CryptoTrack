@@ -9,8 +9,8 @@ const Coin = () => {
   const [coinData, setCoinData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { currency } = useContext(CoinContext);
-  const[historicalData, setHistoricalData] = useState();
+  const { currency } = useContext(CoinContext); // Accessing the selected currency
+  const [historicalData, setHistoricalData] = useState();
 
   const fetchCoinData = async () => {
     if (!coinId) return; // Prevents invalid API call
@@ -37,19 +37,20 @@ const Coin = () => {
   const fetchHistoricalData = async () => {
     const options = {
       method: 'GET',
-      headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-CJE8wxFLBzC3ahQ5TvrYHjoG'}
+      headers: { accept: 'application/json', 'x-cg-demo-api-key': 'CG-CJE8wxFLBzC3ahQ5TvrYHjoG' }
     };
-    
-    fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name}&days=7&interval=daily`, options)
+
+    // Make sure we use the correct currency name format (lowercase)
+    fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name.toLowerCase()}&days=7&interval=daily`, options)
       .then(res => res.json())
       .then(res => setHistoricalData(res))
       .catch(err => console.error(err));
-  }
+  };
 
   useEffect(() => {
     fetchCoinData();
     fetchHistoricalData();
-  }, [currency, coinId]); // Also refetch if coinId changes
+  }, [currency, coinId]); // Refetch when currency or coinId changes
 
   if (loading) {
     return (
@@ -63,7 +64,7 @@ const Coin = () => {
     return (
       <div className='coin'>
         <div className='coin-name'>
-          <img src={coinData?.image?.large} alt="{coinData.name}" />
+          <img src={coinData?.image?.large} alt={coinData.name} />
           <p><b>{coinData.name} ({coinData.symbol.toUpperCase()})</b></p>
         </div>
 
@@ -78,29 +79,29 @@ const Coin = () => {
           </ul>
           <ul>
             <li>Current Price</li>
-            <li>{currency.symbol} {coinData.market_data.current_price[currency.name]?.toLocaleString()}</li>
+            <li>{currency.symbol} {coinData.market_data.current_price[currency.name.toLowerCase()]?.toLocaleString()}</li>
           </ul>
           <ul>
             <li>Market Cap</li>
-            <li>{currency.symbol} {coinData.market_data.market_cap[currency.name]?.toLocaleString()}</li>
+            <li>{currency.symbol} {coinData.market_data.market_cap[currency.name.toLowerCase()]?.toLocaleString()}</li>
           </ul>
           <ul>
             <li>24 Hour High</li>
-            <li>{currency.symbol} {coinData.market_data.high_24h[currency.name]?.toLocaleString()}</li>
+            <li>{currency.symbol} {coinData.market_data.high_24h[currency.name.toLowerCase()]?.toLocaleString()}</li>
           </ul>
           <ul>
             <li>24 Hour Low</li>
-            <li>{currency.symbol} {coinData.market_data.low_24h[currency.name]?.toLocaleString()}</li>
+            <li>{currency.symbol} {coinData.market_data.low_24h[currency.name.toLowerCase()]?.toLocaleString()}</li>
           </ul>
         </div>
       </div>
-    )
+    );
   } else {
     return (
       <div className='spinner'>
         <div className='spin'></div>
       </div>
-    )
+    );
   }
 };
 
