@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="footer-content">
         <p className="copyright">&copy; 2025 CryptoTrack. All Rights Reserved.</p>
         <div className="footer-links">
-          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/sanjoy-bit" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/SanjoyBit" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         <p className="credits">Sanjoy Bit</p>
       </div>
