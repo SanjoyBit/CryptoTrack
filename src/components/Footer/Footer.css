@@ -1,0 +1,48 @@
+/* Overall Footer Styling */
+.footer {
+    color: #e0e0e0; /* Light gray text for readability */
+    padding: 30px 10%; /* Top-bottom padding, and space on the left-right */
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-top: 1px solid rgba(253, 252, 252, 0.847);
+}
+
+/* Content container to center-align */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Copyright text */
+  .copyright {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  /* Links container */
+  .footer-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the links */
+  }
+  
+  .footer-links a {
+    color: #00bfff; /* Cyberpunk blue color */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #caf4f7; /* Glowing cyan on hover */
+    transform: translateY(-3px); /* Slight upward movement on hover */
+  }
+  
+  /* Credits text */
+  .credits {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc; /* Slightly lighter gray */
+  }
+  
