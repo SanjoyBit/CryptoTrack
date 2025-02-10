@@ -183,6 +183,6 @@
 
   .navbar ul.active li:hover {
     color: #fff;
-    background-color: #333;
+    background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #3a0ca3, #7209b7);
   }
 }
