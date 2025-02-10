@@ -93,15 +93,6 @@
     border: none;
   }
   
-  .signup {
-    padding: 10px 15px;
-    background-color: #713eb9e8;
-    color: #e6e6e6;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
 
   @media (max-width: 900px) {
     .navbar {

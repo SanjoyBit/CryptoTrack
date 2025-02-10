@@ -1,0 +1,100 @@
+.top-gainers {
+  padding: 0 10px;
+  padding-bottom: 100px;
+}
+
+.hero {
+  text-align: center;
+  margin: 50px auto;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.crypto-table {
+  max-width: 800px;
+  margin: auto;
+  background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #3a0ca3, #7209b7);
+  border-radius: 15px;
+}
+
+.table-layout {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.market-cap {
+  text-align: right;
+}
+
+.table-layout div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-layout div img {
+  height: auto;
+  width: 25px;
+}
+
+.green {
+  color: greenyellow;
+  text-align: center;
+}
+
+.red {
+  color: red;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .table-layout {
+    grid-template-columns: 0.5fr 3fr 1fr 1fr;
+  }
+
+  .market-cap {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .table-layout div img {
+    width: 15px;
+  }
+
+  .table-layout {
+    font-size: 13px;
+  }
+}

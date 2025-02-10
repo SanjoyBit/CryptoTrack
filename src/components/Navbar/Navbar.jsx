@@ -29,8 +29,10 @@ const Navbar = () => {
         <Link to={'/'} className="logo-container"><img className='logo' src={logo} alt="LOGO" /><span class="logo-name">CryptoTrack</span></Link>
         <ul>
             <Link to={'/'}><li>Home</li></Link>
-            <li>Features</li>
-            <li>Pricing</li>
+            <Link to={'/top-gainers'}><li>Top Gainers</li></Link>
+            <Link to={'/top-losers'}><li>Top Losers</li></Link>
+            {/* <Link to={'/about'}><li>About</li></Link> */}
+            <li>About</li>
             <li>Blog</li>
         </ul>
         <div className="nav-right">
@@ -39,7 +41,6 @@ const Navbar = () => {
                 <option value="inr">INR</option>
                 <option value="eur">EUR</option>
             </select>
-            <div className='signup'>Sign up</div>
         </div>
     </div>
   )
